@@ -1,4 +1,5 @@
 ﻿using Lancom.Domain;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,12 +31,12 @@ namespace Lancom.DataAccess.Repositories
 
         public List<Country> GetAll()
         {
-           return _context.Countries.ToList();
+           return _context.Countries.Include(x => x.Cities).ToList();
         }
 
         public Country GetById(int id)
         {
-            return _context.Countries.FirstOrDefault(x => x.Id == id);
+            return _context.Countries.Include(x => x.Cities).FirstOrDefault(x => x.Id == id);
         }
     }
 }

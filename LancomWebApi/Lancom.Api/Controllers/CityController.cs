@@ -35,7 +35,7 @@ namespace Lancom.Api.Controllers
             }
         }
 
-        [HttpPost()] 
+        [HttpPost("AddCity")] 
         public ActionResult CreateCityFromBody([FromBody] CityModel city)
         {
             if(!_countryService.GetAllCounties().Select(x => x.Id).ToList().Any(x => x == city.CountryId)) 
@@ -53,6 +53,7 @@ namespace Lancom.Api.Controllers
                 return BadRequest("City with that name in that country already exists");
             }
         }
+        [HttpPost("AddCityQuery")]
         public ActionResult CreateCityFromQuery([FromQuery] CityModel city)
         {
             if (!_countryService.GetAllCounties().Select(x => x.Id).ToList().Any(x => x == city.CountryId))

@@ -15,6 +15,7 @@ namespace Lancom.Services.Mappers
             {
                 Id = city.Id,
                 Name = city.Name,
+                CountryId = city.CountryId,
                 Country = city.Country.Name
             };
         }

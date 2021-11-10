@@ -11,7 +11,7 @@ namespace Lancom.Models
 
         public string Name { get; set; }
 
-   
 
+        public List<CityModel> Cities { get; set; } = new List<CityModel>();
     }
 }

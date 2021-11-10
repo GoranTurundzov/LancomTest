@@ -29,7 +29,7 @@ namespace Lancom.Api
            
             string connString = "Server=.\\SQLExpress;Database=LancomContriesDataBase;Trusted_Connection=True";
             services.AddControllers();
-            
+            services.AddSwaggerGen();
 
             DIModule.RegisterModule(services, connString);
         }
@@ -42,6 +42,10 @@ namespace Lancom.Api
                 app.UseDeveloperExceptionPage();
                
             }
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI();
 
             app.UseHttpsRedirection();
 

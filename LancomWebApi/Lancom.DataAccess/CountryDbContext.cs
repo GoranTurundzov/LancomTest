@@ -70,10 +70,10 @@ namespace Lancom.DataAccess
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<City>()
-                        .HasOne(x => x.Country)
-                        .WithMany(x => x.Cities)
-                        .HasForeignKey(x => x.CountryId);
+            modelBuilder.Entity<Country>()
+                            .HasMany(x => x.Cities)
+                            .WithOne(x => x.Country)
+                            .HasForeignKey(x => x.CountryId);
             Seed(modelBuilder);
         }
     }

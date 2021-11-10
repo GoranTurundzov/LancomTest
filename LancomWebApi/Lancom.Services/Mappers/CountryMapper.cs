@@ -17,7 +17,7 @@ namespace Lancom.Services.Mappers
                 Name = country.Name,
                 Cities = new List<City>()
             };
-            
+           
 
             return newCountry;
         }
@@ -27,9 +27,13 @@ namespace Lancom.Services.Mappers
             CountryModel countryModel = new CountryModel
             {
                 Id = country.Id,
-                Name = country.Name
+                Name = country.Name,
+                
             };
-           
+            foreach(City city in country.Cities)
+            {
+                countryModel.Cities.Add(city.ToCityModel());
+            }
             return countryModel;
         }
     }
