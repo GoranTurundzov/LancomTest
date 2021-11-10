@@ -1,0 +1,24 @@
+<div *ngFor="let item of forecast; index as i" class="card"> 
+    <div class="card-body" (click)="onClick(i)">
+        <div class="card-title">
+           <h4>{{item.dateTime}}</h4> 
+           
+        </div>
+        <div class="row">
+            <div class="col-sm-5">
+                <h2>
+                <span style="position: relative; z-index: 2; ">{{item.temp}}°C</span>
+                <img src="http://openweathermap.org/img/wn/{{item.icon}}@2x.png" alt="img" style="position: relative; margin-left: -2vw;"/>
+                </h2>
+                </div>
+                <div class="col-sm-7">
+                    <h4>{{item.description}}</h4>
+                    <h3>{{item.tempMin}}°C - {{item.tempMax}}°C</h3>
+                    <p>Humidity: {{item.humidity}} | Winds: {{item.windSpeed}}</p>
+                </div>
+
+        </div>
+        
+    </div>
+    
+</div>
