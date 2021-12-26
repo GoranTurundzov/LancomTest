@@ -12,7 +12,7 @@
             <app-temperature [data]="data.main[dateShown]"></app-temperature>
         </div>
         <div class="col-md-6 forecast-div" >
-            <app-forecast  [forecast]="data.main" (changeDate)="changeDateShown($event)"></app-forecast>
+            <app-forecast         [forecast]="data.main" (changeDate)="changeDateShown($event)"></app-forecast>
         </div>
       
     </div>
