@@ -1,0 +1,20 @@
+<app-navbar></app-navbar>
+
+<div class="container" *ngIf="data">
+    <div class="row ">
+        <div class="col-lg-12">
+            <h1 class="text-center">{{data.cityName}}</h1>
+         </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-6">
+            <app-temperature [data]="data.main[dateShown]"></app-temperature>
+        </div>
+        <div class="col-md-6 forecast-div" >
+            <app-forecast  [forecast]="data.main" (changeDate)="changeDateShown($event)"></app-forecast>
+        </div>
+      
+    </div>
+
+</div>

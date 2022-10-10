@@ -1,0 +1,15 @@
+.card {
+    background-color: rgba(28, 20, 20, 0.085);
+    color: rgb(31, 26, 26);
+    text-shadow: rgba(58, 58, 56, 0.585) 1px 1px;
+    font-size: x-large;
+}
+.card:hover {
+    background-color: rgba(216, 206, 247, 0.366);
+    border:  1px solid rgba(237, 247, 206, 0.366); 
+    box-shadow: rgba(91, 84, 84, 0.167) 4px 4px;
+    transform: scale(1.01);
+}
+.active {
+    background-color: rgba(152, 139, 191, 0.366);
+}
